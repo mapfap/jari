@@ -1,0 +1,30 @@
+{
+    "key": "jari",
+    "name": "Jari",
+    "description": "Jari is a dashboard for your custom fields",
+    "baseUrl": "{{localBaseUrl}}",
+    "authentication": {
+        "type": "jwt"
+    },
+    "lifecycle": {
+        "installed": "/installed"
+    },
+    "scopes": [
+        "READ"
+    ],
+    "modules": {
+        "generalPages": [
+            {
+                "key": "jari",
+                "location": "system.top.navigation.bar",
+                "name": {
+                    "value": "Jari"
+                },
+                "url": "/jari",
+                "conditions": [{
+                    "condition": "user_is_logged_in"
+                }]
+            }
+        ]
+    }
+}

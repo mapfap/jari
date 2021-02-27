@@ -1,0 +1,48 @@
+{{!< layout}}
+<header class="aui-page-header">
+  <div class="aui-page-header-inner">
+    <div class="aui-page-header-main intro-header">
+      <h1>Financial Report</h1>
+    </div>
+  </div>
+</header>
+
+<div class="aui-page-panel main-panel">
+  <div class="aui-page-panel-inner">
+    <section class="aui-page-panel-item">
+      <table>
+        <tr>
+          <th>Summary</th>
+          <th>Date</th>
+          <th>Amount</th>
+        </tr>
+      {{#each items}}
+        <tr>
+          <td>{{ summary }}</td>
+          <td>{{ created }}</td>
+          <td>{{ amount }}</td>
+        </tr>
+      {{/each}}
+        <tr>
+          <th>Total</th>
+          <th></th>
+          <th>{{ summary.amount }}</th>
+        </tr>
+      </table>
+    </section>
+  </div>
+</div>
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  table, td, th {
+    border: 1px solid rgb(159, 159, 159);
+  }
+
+  td, th {
+    padding: 10px;
+  }
+
+</style>
