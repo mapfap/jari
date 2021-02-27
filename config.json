@@ -60,6 +60,16 @@
         "errorTemplate": true,
         // Public URL to production app.
         "localBaseUrl": "https://jari.rydii.com",
+        "store": {
+            "adapter": "sequelize",
+            // Don't use memory storage for production, otherwise
+            // data in the storage will go away when the app server restarts.
+            // Here, we use PostgreSQL:
+            "dialect": "sqlite",
+            "storage": "./database.sqlite3",
+            // PaaS like Heroku will provide DB connection URL through environment variable.
+            "url": "$DATABASE_URL"
+        },
         // The app can only be registered by the products on these domains:
         "whitelist": [
             "*.jira-dev.com",
